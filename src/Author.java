@@ -2,9 +2,11 @@
 public class Author {
 
 	private String name;
+	private int erdosNumber;
 
 	public Author(String name) {
 		this.name = name;
+		this.erdosNumber = Integer.MAX_VALUE;
 	}
 
 	@Override
@@ -27,5 +29,17 @@ public class Author {
 
 	public String name() {
 		return name;
+	}
+
+	public int erdosNumber() {
+		return erdosNumber;
+	}
+
+	public boolean hasInfiniteErdosNumber() {
+		return Integer.MAX_VALUE == this.erdosNumber;
+	}
+
+	public void reduceErdosTo(int newErdosNumber) {
+		this.erdosNumber = newErdosNumber;
 	}
 }

@@ -31,6 +31,16 @@ public class ErdosTest {
 		assertEquals(expected, solve(problem));
 	}
 
+	@Test@Ignore
+	public void erdosNumberOfErdos() throws Exception {
+		String problem = aScenario()
+				.withPaper("Erdos, P.: AAA")
+				.withAuthor("Erdos, P.")
+				.build();
+		String expected = lines("Scenario 1", "Erdos, P., 0");
+		assertEquals(expected, solve(problem));
+	}
+
 	private ScenarioBuilder aScenario() {
 		return new ScenarioBuilder();
 	}
@@ -41,7 +51,9 @@ public class ErdosTest {
 		Problem problem = new Problem(problemText);
 		String result = "Scenario 1\n";
 		for (int i = 0; i < problem.authors().size(); i++) {
-			result += problem.authors().get(i).name() + " infinity\n";
+			Author author = problem.authors().get(i);
+			String erdosNumber = " infinity\n";
+			result += author.name() + erdosNumber;
 		}
 		return result;
 	}
