@@ -1,5 +1,8 @@
 
-See page 50 of "Programming challenges"
+Problem: given a set of authors and a set of papers that they co-signed, compute the Erdös number of the authors.
+
+https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=12&page=show_problem&problem=985
+
 
 TODO
 
@@ -38,14 +41,17 @@ Smith, M.N., Erdos, P.: Paper title
 Martin, G., Smith, M.N: Another paper
 Smith, M.N.
 Martin, G.
+### more than one path to Erdos
+1
+4 1
+Aaa, A., Erdos, P., Ddd, D.: Paper title
+Bbb, B., Aaa, A.: Something else
+Bbb, B., Ccc, C.: Another paper
+Ddd, D., Ccc, C.: Ninja paper
+Ccc, C.
 
 
 
 
 
-1 paper by Foo, Bar alone
-1 paper by Foo, Bar, Baz Baz
-1 paper by Foo, Bar, Erdos
 
-
-1 paper, one author related to erdos

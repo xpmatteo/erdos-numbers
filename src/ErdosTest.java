@@ -38,6 +38,16 @@ public class ErdosTest {
 		assertEquals(expected, solve(problem));
 	}
 
+	@Test@Ignore
+	public void erdosNumberOf1() throws Exception {
+		String problem = aScenario()
+				.withPaper("Erdos, P., Jiraya, S.: Ninja Math")
+				.withAuthor("Jiraya, S.")
+				.build();
+		String expected = lines("Scenario 1", "Jiraya, S. 1");
+		assertEquals(expected, solve(problem));
+	}
+
 	private ScenarioBuilder aScenario() {
 		return new ScenarioBuilder();
 	}

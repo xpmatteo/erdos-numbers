@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class Author {
 
@@ -6,6 +7,10 @@ public class Author {
 	private int erdosNumber;
 
 	public Author(String name) {
+		this(name, Collections.emptyList());
+	}
+
+	public Author(String name, List<Author> asList) {
 		this.name = name;
 		this.erdosNumber = (ERDOS_HIMSELF.equals(name)) ? 0 : Integer.MAX_VALUE;
 	}
@@ -41,6 +46,6 @@ public class Author {
 	}
 
 	public void reduceErdosTo(int newErdosNumber) {
-		this.erdosNumber = newErdosNumber;
+		this.erdosNumber = newErdosNumber > this.erdosNumber ? this.erdosNumber : newErdosNumber;
 	}
 }

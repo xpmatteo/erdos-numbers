@@ -1,6 +1,10 @@
+import static java.util.Arrays.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
+import java.util.*;
+
+import org.hamcrest.*;
 import org.junit.*;
 
 public class AuthorTest {
@@ -10,6 +14,28 @@ public class AuthorTest {
 		Author author = new Author("Foo, B.");
 		assertThat(author.erdosNumber(), is(equalTo(Integer.MAX_VALUE)));
 		assertTrue("new author erdos number is infinite", author.hasInfiniteErdosNumber());
+	}
+
+	@Test
+	public void erdosNumberNeverIncreases() {
+		Author author = new Author("Jiraya, S.");
+
+		author.reduceErdosTo(3);
+		author.reduceErdosTo(6);
+
+		assertThat(author.erdosNumber(), is(equalTo(3)));
+	}
+
+
+	@Test@Ignore
+	public void propagateErdosNumberToNeighbors() {
+		Author ninja = new Author("Ninja, E");
+		Author author = new Author("Jiraya, S.", asList(ninja));
+
+		author.reduceErdosTo(6);
+
+		assertThat(author.erdosNumber(), is(equalTo(6)));
+		assertThat(ninja.erdosNumber(), is(equalTo(7)));
 	}
 
 	@Test
