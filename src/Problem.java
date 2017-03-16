@@ -6,7 +6,7 @@ public class Problem {
 	private int numberOfScenarios;
 	private int numberOfPapers;
 	private int numberOfAuthors;
-	private List<String> papers = new ArrayList<>();
+	private List<Paper> papers = new ArrayList<>();
 	private List<Author> authors = new ArrayList<>();
 
 	public Problem(String problemText) {
@@ -16,7 +16,7 @@ public class Problem {
 			numberOfAuthors = scanner.nextInt();
 			scanner.nextLine();
 			for (int paper = 0; paper < numberOfPapers; paper++) {
-				papers.add(scanner.nextLine());
+				papers.add(new Paper(scanner.nextLine()));
 			}
 			for (int i = 0; i < numberOfAuthors; i++) {
 				authors.add(new Author(scanner.nextLine()));
@@ -36,7 +36,7 @@ public class Problem {
 		return numberOfAuthors;
 	}
 
-	public List<String> papers() {
+	public List<Paper> papers() {
 		return papers;
 	}
 

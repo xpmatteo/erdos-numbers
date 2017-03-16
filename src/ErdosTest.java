@@ -1,8 +1,5 @@
-import static java.util.Arrays.*;
+import static java.lang.String.*;
 import static org.junit.Assert.*;
-
-import java.io.*;
-import java.util.*;
 
 import org.junit.*;
 
@@ -52,7 +49,7 @@ public class ErdosTest {
 		String result = "Scenario 1\n";
 		for (int i = 0; i < problem.authors().size(); i++) {
 			Author author = problem.authors().get(i);
-			String erdosNumber = author.hasInfiniteErdosNumber() ? "infinity" : String.valueOf(author.erdosNumber());
+			String erdosNumber = author.hasInfiniteErdosNumber() ? "infinity" : valueOf(author.erdosNumber());
 			result += author.name() + " " + erdosNumber + "\n";
 		}
 		return result;
