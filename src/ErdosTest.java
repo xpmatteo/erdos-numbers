@@ -31,13 +31,13 @@ public class ErdosTest {
 		assertEquals(expected, solve(problem));
 	}
 
-	@Test@Ignore
+	@Test
 	public void erdosNumberOfErdos() throws Exception {
 		String problem = aScenario()
 				.withPaper("Erdos, P.: AAA")
 				.withAuthor("Erdos, P.")
 				.build();
-		String expected = lines("Scenario 1", "Erdos, P., 0");
+		String expected = lines("Scenario 1", "Erdos, P. 0");
 		assertEquals(expected, solve(problem));
 	}
 
@@ -52,8 +52,8 @@ public class ErdosTest {
 		String result = "Scenario 1\n";
 		for (int i = 0; i < problem.authors().size(); i++) {
 			Author author = problem.authors().get(i);
-			String erdosNumber = " infinity\n";
-			result += author.name() + erdosNumber;
+			String erdosNumber = author.hasInfiniteErdosNumber() ? "infinity" : String.valueOf(author.erdosNumber());
+			result += author.name() + " " + erdosNumber + "\n";
 		}
 		return result;
 	}

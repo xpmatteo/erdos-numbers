@@ -1,12 +1,13 @@
 
 public class Author {
 
+	private static final String ERDOS_HIMSELF = "Erdos, P.";
 	private String name;
 	private int erdosNumber;
 
 	public Author(String name) {
 		this.name = name;
-		this.erdosNumber = Integer.MAX_VALUE;
+		this.erdosNumber = (ERDOS_HIMSELF.equals(name)) ? 0 : Integer.MAX_VALUE;
 	}
 
 	@Override
