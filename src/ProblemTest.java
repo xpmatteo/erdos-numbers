@@ -19,7 +19,7 @@ public class ProblemTest {
 		assertEquals(1, problem.numberOfPapers());
 		assertEquals(2, problem.numberOfAuthors());
 		assertEquals(asList("Heisig, W., Zooz, X.Y.: Some impressive work"), problem.papers());
-		assertEquals(asList("Heisig, W.", "Zooz, X.Y."), problem.authors());
+		assertEquals(asList(new Author("Heisig, W."), new Author("Zooz, X.Y.")), problem.authors());
 	}
 
 

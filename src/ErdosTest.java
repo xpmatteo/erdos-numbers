@@ -41,7 +41,7 @@ public class ErdosTest {
 		Problem problem = new Problem(problemText);
 		String result = "Scenario 1\n";
 		for (int i = 0; i < problem.authors().size(); i++) {
-			result += problem.authors().get(i) + " infinity\n";
+			result += problem.authors().get(i).name() + " infinity\n";
 		}
 		return result;
 	}

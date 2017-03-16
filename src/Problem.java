@@ -7,7 +7,7 @@ public class Problem {
 	private int numberOfPapers;
 	private int numberOfAuthors;
 	private List<String> papers = new ArrayList<>();
-	private List<String> authors = new ArrayList<>();
+	private List<Author> authors = new ArrayList<>();
 
 	public Problem(String problemText) {
 		try (Scanner scanner = new Scanner(new StringReader(problemText))) {
@@ -19,7 +19,7 @@ public class Problem {
 				papers.add(scanner.nextLine());
 			}
 			for (int i = 0; i < numberOfAuthors; i++) {
-				authors.add(scanner.nextLine());
+				authors.add(new Author(scanner.nextLine()));
 			}
 		}
 	}
@@ -40,7 +40,7 @@ public class Problem {
 		return papers;
 	}
 
-	public List<String> authors() {
+	public List<Author> authors() {
 		return authors;
 	}
 
